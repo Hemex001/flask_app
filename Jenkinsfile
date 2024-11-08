@@ -9,7 +9,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'docker-compose exec web pytest'
+		sh 'sleep 10'
+                sh 'docker-compose exec flask_app pytest'
             }
         }
         stage('Deploy') {
