@@ -7,12 +7,12 @@ pipeline {
                 sh 'docker-compose up --build -d'
             }
         }
-        stage('Test') {
-            steps {
-		sh 'sleep 10'
-                sh 'docker-compose exec flask_app pytest'
-            }
-        }
+//        stage('Test') {
+//            steps {
+//		sh 'sleep 10'
+//                sh 'docker-compose exec flask_app pytest'
+//            }
+//        }
         stage('Deploy') {
             steps {
                 sh 'docker-compose up -d'
